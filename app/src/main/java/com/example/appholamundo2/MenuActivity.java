@@ -44,6 +44,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        crvMoneda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, monedasActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

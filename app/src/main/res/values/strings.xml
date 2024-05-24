@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">appHolaMundo2</string>
+    <array name="monedas">
+        <item>Dolar Americano</item>
+        <item>Dolar Canadiense</item>
+        <item>Euros</item>
+        <item>Libras</item>
+    </array>
 </resources>
