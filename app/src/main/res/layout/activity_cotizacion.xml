@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CotizacionActivity">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".CotizacionActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cotización"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:padding="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cliente Nombre"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:id="@+id/txtNombreCliente"/>
+
+        <EditText
+            android:id="@+id/carDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Descripción del Automóvil"/>
+
+        <EditText
+            android:id="@+id/carPriceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Valor del automóvil"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/downPaymentPercentageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="% Pago inicial"
+            android:inputType="numberDecimal"/>
+
+        <RadioGroup
+            android:id="@+id/termRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/term12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plazo a 12 meses"/>
+
+            <RadioButton
+                android:id="@+id/term18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plazo a 18 meses"/>
+
+            <RadioButton
+                android:id="@+id/term24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plazo a 24 meses"/>
+
+            <RadioButton
+                android:id="@+id/term36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plazo a 36 meses"/>
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/calculateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_background"
+                android:padding="16dp"
+                android:text="Calcular"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:elevation="4dp"
+                android:layout_marginRight="5dp"/>
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_background"
+                android:padding="16dp"
+                android:text="Limpiar"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:elevation="4dp"
+                android:layout_marginRight="5dp"/>
+            <Button
+                android:id="@+id/btnCerrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_background"
+                android:padding="16dp"
+                android:text="Cerrar"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:elevation="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/initialPaymentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pago inicial: "
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/monthlyPaymentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pago mensual: "
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/folioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Folio: "
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

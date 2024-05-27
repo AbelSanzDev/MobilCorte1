@@ -51,6 +51,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        crvCotizacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, MainCotizacion.class);
+                startActivity(intent);
+            }
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
