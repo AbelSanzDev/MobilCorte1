@@ -58,6 +58,13 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        crvSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, SpinnerPersonalizado.class);
+                startActivity(intent);
+            }
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

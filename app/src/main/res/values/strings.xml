@@ -6,4 +6,15 @@
         <item>Euros</item>
         <item>Libras</item>
     </array>
+    <string name="itemFrappses">Categorias Frappses</string>
+    <string name="itemAgradecimiento">Agradecimiento</string>
+    <string name="itemAmor">Amor</string>
+    <string name="itemNewYear">Año Nuevo</string>
+    <string name="itemCanciones">Canciones</string>
+    <string name="msgFrapses">Desplegar</string>
+    <string name="msgAgradecimiento">Prueba dar las gracias c:</string>
+    <string name="msgAmor">Enamora con estas frases (UWU)</string>
+    <string name="msgNewYear">Felicita el año nuevo</string> <string name="msgCanciones">Escucha solo lo mejor</string> <string name="msgSeleccionado">Se ha seleccionado</string>
+    <string name="Descripcion">Seleccione una categoria</string>
+
 </resources>
