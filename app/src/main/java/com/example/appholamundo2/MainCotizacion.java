@@ -2,6 +2,7 @@ package com.example.appholamundo2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainCotizacion extends AppCompatActivity {
 
     private EditText clientNameEditText;
-    private Button quoteButton;
+    private Button quoteButton,cerrarButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,14 @@ public class MainCotizacion extends AppCompatActivity {
 
         clientNameEditText = findViewById(R.id.clientNameEditText);
         quoteButton = findViewById(R.id.quoteButton);
+        cerrarButton = findViewById(R.id.cerrarButton);
+
+        cerrarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         quoteButton.setOnClickListener(view -> {
             String clientName = clientNameEditText.getText().toString();
