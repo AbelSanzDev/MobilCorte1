@@ -3,6 +3,7 @@ package com.example.appholamundo2;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -14,14 +15,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
+
 public class SpinnerPersonalizado extends AppCompatActivity {
 
+    private Button btnCerrar;
     private Spinner sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner_personalizado);
+        btnCerrar = findViewById(R.id.btnCerrar);
+
         ArrayList<ItemData> list = new ArrayList<>();
         list.add(new ItemData(getString(R.string.itemFrappses), getString(R.string.msgFrapses), R.drawable.categorias));
         list.add(new ItemData(getString(R.string.itemAgradecimiento), getString(R.string.msgAgradecimiento), R.drawable.agradecimiento));
@@ -32,7 +37,12 @@ public class SpinnerPersonalizado extends AppCompatActivity {
         SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.lblCategorias, list);
         sp.setAdapter(adapter);
 
-
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
