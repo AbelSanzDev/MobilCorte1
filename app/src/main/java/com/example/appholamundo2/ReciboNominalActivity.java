@@ -50,7 +50,9 @@ public class ReciboNominalActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String nombreTrabajador = intent.getStringExtra("nombreTrabajador");
-        String numero = intent.getStringExtra("numero");
+        int sixDigitNumber = (int) (Math.random() * 900000) + 100000;
+        String numero = Integer.toString(sixDigitNumber);
+        etNumeroRecibo.setText(numero);
         tvNombreTrabajadorCalculo.setText(nombreTrabajador);
         etNumeroRecibo.setText(numero);
         etNombre.setText(nombreTrabajador);
@@ -61,20 +63,33 @@ public class ReciboNominalActivity extends AppCompatActivity {
 
     }
     private void calcularNomina() {
-
         String nombre = tvNombreTrabajadorCalculo.getText().toString();
-        float horasTrabNormal = Float.parseFloat(etHorasTrabNormal.getText().toString());
-        float horasTrabExtras = Float.parseFloat(etHorasExtras.getText().toString());
+        String horasTrabNormalStr = etHorasTrabNormal.getText().toString();
+        String horasTrabExtrasStr = etHorasExtras.getText().toString();
 
-        if(nombre.isEmpty() || etHorasTrabNormal.getText().toString().isEmpty() || etHorasExtras.getText().toString().isEmpty()){
-
+        if (nombre.isEmpty() || horasTrabNormalStr.isEmpty() || horasTrabExtrasStr.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        float horasTrabNormal;
+        float horasTrabExtras;
+        try {
+            horasTrabNormal = Float.parseFloat(horasTrabNormalStr);
+            horasTrabExtras = Float.parseFloat(horasTrabExtrasStr);
+        } catch (NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), "Horas trabajadas deben ser números válidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         int puesto = 0;
         if (rbAuxiliar.isChecked()) puesto = 1;
-        if (rbAlbanil.isChecked()) puesto = 2;
-        if (rbIngObra.isChecked()) puesto = 3;
+        else if (rbAlbanil.isChecked()) puesto = 2;
+        else if (rbIngObra.isChecked()) puesto = 3;
+        else {
+            Toast.makeText(getApplicationContext(), "Debe seleccionar un puesto", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         recibo.setNombre(nombre);
         recibo.setHorasTrabNormal(horasTrabNormal);
@@ -85,9 +100,9 @@ public class ReciboNominalActivity extends AppCompatActivity {
         float impuesto = recibo.calcularImpuesto();
         float total = recibo.calcularTotal();
 
-        tvSubtotal.setText(String.valueOf(subtotal));
-        tvImpuesto.setText(String.valueOf(impuesto));
-        tvTotalPagar.setText(String.valueOf(total));
+        tvSubtotal.setText(String.format("%.2f", subtotal));
+        tvImpuesto.setText(String.format("%.2f", impuesto));
+        tvTotalPagar.setText(String.format("%.2f", total));
     }
 
     private void limpiarCampos() {
