@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    private TextView tvTitulo,tvNombreTrabajador,tvTrabajadorNombre;
+    private TextView tvTitulo,tvNombreTrabajador,etNombre;
     private ImageView logoICG;
     private Button btnEntrar,btnSalir;
 
@@ -26,14 +26,14 @@ public class MainActivity2 extends AppCompatActivity {
 
         tvTitulo = findViewById(R.id.tvTitulo);
         tvNombreTrabajador = findViewById(R.id.tvNombreTrabajador);
-        tvTrabajadorNombre = findViewById(R.id.tvTrabajadorNombre);
         logoICG = findViewById(R.id.logoICG);
         btnEntrar = findViewById(R.id.btnEntrar);
         btnSalir = findViewById(R.id.btnSalir);
+        etNombre = findViewById(R.id.etNombre);
 
 
         btnEntrar.setOnClickListener(view -> {
-            String nombreTrabajador = tvTrabajadorNombre.getText().toString();
+            String nombreTrabajador = etNombre.getText().toString();
             Intent intent = new Intent(MainActivity2.this, ReciboNominalActivity.class);
             intent.putExtra("nombreTrabajador", nombreTrabajador);
             startActivity(intent);
@@ -41,10 +41,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         btnSalir.setOnClickListener(view -> finish());
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
     }
 }

@@ -21,6 +21,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNombreTrabajador"
+        android:padding="20dp"
+        android:layout_margin="5dp"
+        android:id="@+id/etNombre"
+        />
+
 
 
     <ImageView
@@ -28,7 +37,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/icg_logo"
-        android:layout_below="@id/tvNombreTrabajador"
+        android:layout_below="@id/etNombre"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
