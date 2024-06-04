@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cálculo de pago de nomina"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvNombreTrabajador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Trabajador"
+        android:layout_below="@id/tvTitulo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvTrabajadorNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaristo Toscano"
+        android:layout_below="@id/tvNombreTrabajador"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:id="@+id/logoICG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/icg_logo"
+        android:layout_below="@id/tvTrabajadorNombre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        android:layout_below="@id/logoICG"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:layout_below="@id/btnEntrar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>

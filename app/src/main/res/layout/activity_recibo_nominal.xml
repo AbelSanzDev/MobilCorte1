@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTituloCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculo de Pago de Nomina"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvNombreTrabajadorCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaristo Toscano"
+        android:layout_below="@id/tvTituloCalculo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etNumeroRecibo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de recibo"
+        android:padding="20dp"
+        android:layout_below="@id/tvNombreTrabajadorCalculo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_below="@id/etNumeroRecibo"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <EditText
+        android:id="@+id/etHorasTrabajadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horas trabajadas"
+        android:layout_below="@id/etNombre"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <EditText
+        android:id="@+id/etHorasExtras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horas Extras"
+        android:layout_below="@id/etHorasTrabajadas"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <RadioGroup
+        android:id="@+id/rgPuesto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/etHorasExtras"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:id="@+id/rbAuxiliar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auxiliar" />
+
+        <RadioButton
+            android:id="@+id/rbAlbanil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Albañil" />
+
+        <RadioButton
+            android:id="@+id/rbIngObra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ing. Obra" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvSubtotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtotal"
+        android:layout_below="@id/rgPuesto"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvImpuesto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Impuesto"
+        android:layout_below="@id/tvSubtotal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvTotalPagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total a pagar"
+        android:layout_below="@id/tvImpuesto"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_below="@id/tvTotalPagar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"
+        android:layout_below="@id/btnCalcular"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_below="@id/btnLimpiar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>
