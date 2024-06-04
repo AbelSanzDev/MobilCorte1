@@ -21,21 +21,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
-    <TextView
-        android:id="@+id/tvTrabajadorNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Evaristo Toscano"
-        android:layout_below="@id/tvNombreTrabajador"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+
 
     <ImageView
         android:id="@+id/logoICG"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/icg_logo"
-        android:layout_below="@id/tvTrabajadorNombre"
+        android:layout_below="@id/tvNombreTrabajador"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
