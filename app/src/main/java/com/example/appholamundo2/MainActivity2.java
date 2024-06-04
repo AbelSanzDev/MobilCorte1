@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +34,18 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         btnEntrar.setOnClickListener(view -> {
+
+            int sixDigitNumber = (int) (Math.random() * 900000) + 100000;
             String nombreTrabajador = etNombre.getText().toString();
+            if(nombreTrabajador.isEmpty()){
+                Toast.makeText(getApplicationContext(), "Es obligatorio el nombre", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
             Intent intent = new Intent(MainActivity2.this, ReciboNominalActivity.class);
             intent.putExtra("nombreTrabajador", nombreTrabajador);
+            intent.putExtra("numero", sixDigitNumber);
+
             startActivity(intent);
         });
 

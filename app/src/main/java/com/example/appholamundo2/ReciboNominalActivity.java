@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,7 +50,9 @@ public class ReciboNominalActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String nombreTrabajador = intent.getStringExtra("nombreTrabajador");
+        String numero = intent.getStringExtra("numero");
         tvNombreTrabajadorCalculo.setText(nombreTrabajador);
+        etNumeroRecibo.setText(numero);
         etNombre.setText(nombreTrabajador);
 
         btnCalcular.setOnClickListener(view -> calcularNomina());
@@ -58,17 +61,21 @@ public class ReciboNominalActivity extends AppCompatActivity {
 
     }
     private void calcularNomina() {
-        int numRecibo = Integer.parseInt(etNumeroRecibo.getText().toString());
+
         String nombre = tvNombreTrabajadorCalculo.getText().toString();
         float horasTrabNormal = Float.parseFloat(etHorasTrabNormal.getText().toString());
         float horasTrabExtras = Float.parseFloat(etHorasExtras.getText().toString());
 
+        if(nombre.isEmpty() || etHorasTrabNormal.getText().toString().isEmpty() || etHorasExtras.getText().toString().isEmpty()){
+
+            Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+            return;
+        }
         int puesto = 0;
         if (rbAuxiliar.isChecked()) puesto = 1;
         if (rbAlbanil.isChecked()) puesto = 2;
         if (rbIngObra.isChecked()) puesto = 3;
 
-        recibo.setNumRecibo(numRecibo);
         recibo.setNombre(nombre);
         recibo.setHorasTrabNormal(horasTrabNormal);
         recibo.setHorasTrabExtras(horasTrabExtras);
